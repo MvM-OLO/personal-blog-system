@@ -29,7 +29,9 @@ async function generateAccess(options: GenerateMenuAndRoutesOptions) {
         content: `${$t('common.loadingMenu')}...`,
         duration: 1.5,
       });
-      return await getAllMenusApi();
+      const res = await getAllMenusApi();
+      console.log(res);
+      return res;
     },
     // 可以指定没有权限跳转403页面
     forbiddenComponent,

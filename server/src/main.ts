@@ -7,7 +7,7 @@ import { AllExceptionsFilter } from './common/filters/http-exception.filter';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  app.setGlobalPrefix('vv-blog');
+  app.setGlobalPrefix('blog');
 
   // 启用全局验证管道
   app.useGlobalPipes(
@@ -18,7 +18,7 @@ async function bootstrap() {
   );
 
   const config = new DocumentBuilder()
-    .setTitle('VV-BLOG 接口文档')
+    .setTitle('BLOG 接口文档')
     .setDescription('个人博客后台管理服务接口文档')
     .setVersion('1.0')
     .addBearerAuth()

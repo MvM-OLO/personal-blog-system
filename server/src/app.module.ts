@@ -8,7 +8,8 @@ import { UserModule } from './modules/user/user.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { Article } from './modules/article/article.entity';
 import { ArticleModule } from './modules/article/article.module';
-
+import { MenuModule } from './modules/menu/menu.module';
+import { Menu } from './modules/menu/menu.entity';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
@@ -18,12 +19,13 @@ import { ArticleModule } from './modules/article/article.module';
       username: 'root',
       password: '123456',
       database: 'test',
-      entities: [User, Article],
+      entities: [User, Article, Menu],
       synchronize: true,
     }),
     UserModule,
     AuthModule,
     ArticleModule,
+    MenuModule,
   ],
   controllers: [AppController],
   providers: [AppService],
